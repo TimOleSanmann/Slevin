@@ -23,7 +23,7 @@ namespace Slevin
             CommandService = new CommandService();
             ServiceProvider = ConfigureServices();
             BotClient = new DiscordSocketClient();
-            await BotClient.LoginAsync(Discord.TokenType.Bot, Secret.GetToken());
+            await BotClient.LoginAsync(Discord.TokenType.Bot, ConfigManager.GetBotToken());
             await BotClient.StartAsync();
 
             BotClient.Log += Log;
